@@ -1,0 +1,286 @@
+8th Jan 2024
+Angular - client side javascript framework + Opinionated framework
+
+SPA - Single Page Application
+
+Javascript - client side + server side scripting language, object oriented programming
+
+Node - Runtime / Platform on which javascript is getting executed outside of the browser.
+
+Client side power - which would render html at client side
++
+More object oriented way to write the code - modular, reusable
+
+For client side rendering you could make use of plugins jQuerytemplate
+
+use object oriented concepts and writing code in that way.
+
+Instead of this if above two things are being taken care for you by someoneelse, so that you
+can concentrate on business logic that would be anytime better.
+
+So make use of any client side javascript framework
+for client side html rendering and writing code in object oriented way.
+
+e.g Angular, Ember
+
+Single Page Application - single shell page, rest of the pages(views) are getting rendered at client
+side within that shell page. Whenever updated data is required then only asynchronous call is being
+made to the server other wise most of the things are available at client side.
+    Faster, High performing application on mobile.
+    Does not reload the page.
+    Load initial resources on initial page load and as and when require then asynchronous call.
+    More rich and responsive.
+    Local storage
+
+    Module Formats
+
+    Asynchronous Module Definition(AMD)
+    export - define
+    import - RequireJS - module bundler(works at build time)
+
+    CommonJS
+    export - module.exports
+    import - require() function
+
+    Universal Module Definition(CMD)
+    AMD and CommonJS
+
+    System.register
+    es6 module format
+    export - export
+    import - import - SystemJS - Module Loader(works at run time)
+
+    ES6 / ES2015 Module format
+    export - export
+    import - import
+
+    Module Bundlers - Webpack, Browserify
+
+    ECMAScript - Standards / Specifications on which javascript is being developed
+
+    ES5 - VanillaJS
+        class using keyword function
+        inheritance using
+                        prototype chaining
+                        classical inheritance
+                        pseudo classical inheritance (combination of prototype chaining and classical inheritance)
+
+    ES6 / ES2015 - object oriented
+        class  using keyword class
+        inheritance using extends
+    
+    ES2015+
+
+    typescript - you need to have transpiler (transform + compile)
+        tsc - typescript compiler
+
+    .ts to .js
+
+    cmd to transpile to .js file is 'tsc .tsfilename'
+
+    Have converted to ES5 class with the file type extension '.ts' with the cmd 'tsc .tsfilename'
+
+    In ES5, we declare the variables with 'var' keyword
+    In ES2015, we can also go for along with 'var' something called as 'let' or even 'const'
+
+    Have explored on classes, declarations, scope, arrow_functions, destructuring, rest, spread
+
+    Have initiated config file inside the folder 'TypeScript_Demos' with the cmd 'tsc --init' and added some
+    configuration and removed '.js' files and ran the cmd 'tsc' from the folder 'TypeScript_Demos'. We will
+    get the new folder named 'output' by converting the '.ts' files to '.js'.
+
+    If we change the value of target from ES5 to ES2015 in tsconfig.json file, we will get ES2015 class format
+
+    Created a new angular project naming 'shopping-cart-app' with angular version 17 with the cmd 'ng new
+    shopping-cart-app --standalone=false --ssr=false' where ssr is 'server side rendering'
+
+    Before creating the project, my angular version was 16.2.0
+
+    I have updated it with cmd 'npm i -g @angular/cli@latest'
+
+10th Jan 2024
+Extensions of Visual Studio Code
+AutoFileName
+vscode-icons
+JavaScript (ES6) code snippets
+CSS Formatter
+IntelliSense for CSS class names in HTML
+Angular Snippets(Version 16)
+Angular Language Service
+ 
+After Extensions are installed
+File Menu -> Preferences -> File Icon Theme -> Select VScode Icons
+
+In shopping-cart-app, have created a component with cmd 'ng g c components/hello' and also manually created a
+component naming 'hi.component.ts'
+
+Also created new component naming 'greet' and explored on String Interpolation, Property Binding
+
+Explored on hierarchy of components by having multiple bootstrap components by creating a new component manually
+naming 'appII' and added it in bootstrap array in 'app.module.ts' file and also added it in 'index.html' file.
+
+Explored on Structural Directive(*ngFor, *ngIf, *ngSwitch) - changes the DOM layout by adding or removing DOM elements.
+components - used with a template. Most common directive.
+
+12th Jan 2024
+Attribute Directive - changes the appearance or behavior of an element, component, another directive.
+ngClass - Adds and removes a set of css classes
+ngStyle - Adds and removes a set of HTML styles
+ngModel - Add two way data binding to an HTML form element
+
+Installed bootstrap, added the path in 'angular.json' file and added bootstrap classes in AttributeDirectiveComponent
+
+Explored on attribute directives in AttributeDirectiveComponent
+
+A standalone component is a type of component that doesn't belong to any specific angular module. Angular standalone
+components are those which are marked with the standalone flag=true. This tells angular compiler that the component
+doesn't need to be declared in an NgModule. standalone components can import other standalone components and NgModule
+but they cannot export any dependencies.
+Benefits of standalone component:
+-> Modularity - standalone components can be used in isolation, without the need of NgModule. This makes your code
+more modular and easier to be reused.
+-> Effeciency - standalone components are tree-shakable, which means that angular will only load the components
+that are actually used in your application. This can improve the performance of your application.
+-> Sharing - standalone components can be shared with other angular applications. This makes it easy to create
+reusable components that can be used across multiple projects.
+Use standalone components for small, reusable components. For larger components it may be better to use NgModule
+
+Created a standalone component naming 'SimplestandalonecompComponent' with the cmd 'ng g c
+components/simplestandalonecomp --standalone=true' and added the component in imports array
+of 'app.module.ts' file. If you get any error, restart the angular dev server.
+
+Created a menu component and one nav bar with the menu items
+
+Also created a service 'Menu' using the cmd 'ng g s services/menu'
+
+Explored on providers of services in MenuComponent, MenuService, AppComponent and AppModule files
+
+15th Jan 2024
+Previous session assignment was to create an application as standalone one and the cmd is 'ng new simplestandaloneapp --standalone=true --ssr=false'
+
+Created a Products component as well as a service in which we have all the products
+We have explored on *ngIf, property binding and event binding in products component
+Implemented searching the products by providing product names
+Also explored on template reference variable #
+
+Implementation of Parent to child communication using @Input() decorator
+
+Implementation of Child to parent communication using @Output() decorator with two way data binding using profile component
+
+17th Jan 2024
+Created a login component and explored on two way data binding with change event and ngModel
+
+Created a cart details component and made communication with add to cart using dependency injection as well as
+having singleton instance of a service(CartService) between components(any to any component communication)
+Note: We should remember that if you have multiple instances of a service in multiple components, we won't
+able to get the details or communicate with the components which are using the same service. So, we must use
+singleton instace by providing it to root or to any module.
+
+To get the cart details immediately after clicking on product addtocart button, we make use of subject(observable)
+from rxjs.
+
+After adding the products to the cart, if we refresh the page we won't find any products in the cart. So, to
+store the products in the cart when we add, we make use of one of the node package known as 'angular-web-storage'.
+Installed it with the cmd 'npm i angular-web-storage' and added the @SessionStorage() decorator to myCart variable
+in 'CartService' file.
+
+Assignment 1
+Create one action button 'Remove' in cart details component and implemented it to remove the product from cart.
+
+Assignment 2
+Create login component and welcome component. Once the user logged in, display the message 'Welcome {{username}}!'.
+
+24th Jan 2024
+Implemented Single Page Application(SPA) with routing.
+There is one single shell page, where as other pages are kind of views and they are getting routed at the
+client side within that shell page.
+Necessary Html and other stuff getting downloaded for the first time, later most of the things happens at
+client side only for updated data it makes asynchronous call and get the data from the server.
+SPA Benefits:
+Fast and Responsive - most of things are available at client side
+Caching capabilities
+Enhanced user experiences
+Less network bandwidth
+
+Once user logged in, we should go to products page directly and we did it with the help of router.navigate()
+in login.component.ts file.
+
+Implemented nested routing by clicking on product name which routes us to a seperate component which displays
+the product details. And also made use of ActivatedRoute to get the productId from the url.
+
+Assignment: Implement PageNotFound component when user goes to unknown/unregistered url.
+
+29th Jan 2024
+Implemented PageNotFound component when user goes to unknown/unregistered url.
+
+We have created a feature module naming 'SharedModule' and some components included init naming 'SharedCompOneComponent'
+and 'SharedCompTwoComponent' and accessing them from greetcomponent by having the 'SharedModule' inside imports
+array of 'app.module.ts' file.
+
+Implemented Lazy loading by create a module(lazy.module.ts) and components(lazyone and lazytwo) along with
+routing(lazy-routing.module.ts) and also explored on preloading strategies of modules.
+
+Explored on lifecycle hooks:
+1. constructor - mainly for Dependency Injection
+2. ngOnChanges - Invoked everytime when there is a change in one of the input properties of the component.
+3. ngOnInit - For doing most of the initialization - This hook is called only once after the first ngOnChanges.
+4. ngDoCheck - Invoked when the change detector of the given component is invoked. It allows us to implement
+               our own change detection algorithm for the given component.
+5. ngAfterContentInit - called when the component's content ngContent is initialized.
+6. ngAfterContentChecked - called when the component's content is updated or checked for updates.
+7. ngAfterViewInit - called when the component's projected view has been initialized.
+8. ngAfterViewChecked - called after the projected view has been checked.
+9. ngOnDestroy - Release the resources before getting destroyed.
+
+Created one component naming 'HooksChildComponent' where we implemented constructor, ngOnInit and ngOnDestroy.
+
+5th Feb 2024
+Implemented ngOnChanges in 'HooksChildComponent' by having parent to child communication with 'HooksComponent'
+using @Input() decorator. And also created one class naming 'Student' and a simple form in 'HooksComponent'
+where we have seen the changes of input properties of 'HooksChildComponent' in console. Also implemented
+ngDoCheck in same files as a 2nd solution.
+
+Also implemented content projection using ngAfterContentInit and ngAfterContentChecked with ContentChild decorator
+in both the component files 'HooksComponent' and 'HooksChildComponent'.
+
+And also implemented ngAfterViewInit and ngAfterViewChecked with ViewChild decorator in both the component files
+'HooksComponent' and 'HooksChildComponent'.
+
+Assignment: @ViewChildren() Decorator.
+
+HTML forms in Angular:
+1. Template Driven Form
+Pros
+    Entire form gets managed in the view template
+    More simple
+    All validations are done declaratively inside the tempalte / view - html based
+Cons
+    As form keeps growing the view templates get cluttered, making the code difficult to read and debug
+    Gets harder to maintain and hence less scalable approach
+    Complex / custom validations are more difficult as writing it in declarative manner
+    Validations are tightly coupled with templates and hence it is difficult to write test cases for validation logic
+Template Driven forms are asynchronous
+2. Reactive Form
+Pros
+    Business Logic (validations) and control declarations are isolated from the view template
+    This increase the scalability, readability and maintainability
+    Validation logic is in component class, imperatively written, unit test are easily written as template and validations are seperated
+    Easy imperatively you can write custom logic - custom validator
+    Reactive Forms are synchronous - due to synchronous in nature, developers can access and update any form control readily available in the code
+Cons
+    Reactive forms are little complex to user for the first time developers
+    There is no way to disable inputs using the disabled attribute of an html controll unless manually disable it using FormControl programtically
+
+Created a signupform using Template Driven form in 'SignupformComponent'.
+
+9th Feb 2024
+Created a ReactiveformComponent for reactive form and also created one cutsom validator for age value in
+utilities folder.
+
+Angular pipes - allows its users to change the format in which data is being displayed on the screen.
+Explored on built-in pipes and also on one custom pipe naming 'caption' in DemopipesComponent.
+And also implemented filtering names using custom pipe naming 'justfilter'.
+
+12th Feb 2024
+Created a UsersComponent with the cmd 'ng g c components/users --inline-style --inline-template' and also
+a service naming UsersService with the cmd 'ng g s services/users' for RESTFul service Implementation.
