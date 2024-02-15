@@ -1,0 +1,34 @@
+h1{
+    text-align: center;
+}
+
+img{
+    width: auto;
+    height: 100px;
+}
+
+table{
+    display: 'inline-block';
+    float: left;
+    margin-left: 5px;
+    padding: 20px;
+    width: 100%;
+}
+
+table caption{
+    text-align: center;
+}
+
+th{
+    text-align: center;
+    background-color: palegreen;
+    font-weight: bold;
+}
+
+td{
+    text-align: center;
+}
+
+td button{
+    margin: 5px;
+}

@@ -1,0 +1,15 @@
+img{
+    width: 200px;
+    height: 200px;
+}
+
+h3, span{
+    color: navy;
+    width: auto;
+    margin: 20px;
+}
+
+div{
+    font-weight: bold;
+    font-style: italic;
+}

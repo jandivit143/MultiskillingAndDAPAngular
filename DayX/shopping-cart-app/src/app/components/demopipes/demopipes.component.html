@@ -1,0 +1,62 @@
+<div style="text-align: center; margin: 30px;">
+    <h1 class="display-3 text-info">Demo Pipes!</h1>
+    <!-- <h2 class="text-success">{{name}}</h2>
+    <h2 class="text-success">{{name | lowercase}}</h2>
+    <h2 class="text-success">{{name | uppercase}}</h2>
+    <h2 class="text-success">{{name | titlecase}}</h2>
+    
+    <hr/>
+    
+    <h2 class="text-warning">{{num}}</h2>
+    <h2 class="text-warning">{{num | number}}</h2>
+    <h2 class="text-warning">{{num | number:'1.1-2'}}</h2>
+    <h2 class="text-warning">{{num | number:'1.4-6'}}</h2>
+
+    <hr/>
+
+    <h2 class="text-info">{{no}}</h2>
+    <h2 class="text-info">{{no | percent}}</h2>
+    <h2 class="text-info">{{no | percent:'2.1-2'}}</h2> -->
+
+    <!-- <hr/>
+
+    <h2 class="text-primary">{{today}}</h2>
+    <h2 class="text-primary">{{today | date}}</h2>
+    <h2 class="text-primary">{{today | date:'shortTime'}}</h2>
+    <h2 class="text-primary">{{today | date:'longTime'}}</h2>
+    <h2 class="text-primary">{{today | date:'fullDate'}}</h2>
+    <h2 class="text-primary">{{today | date:'fullDate' | uppercase}}</h2>
+    <h2 class="text-primary">{{today | date:'long'}}</h2>
+    <h2 class="text-primary">{{today | date:'dd-MM-yyyy hh:mm:ss'}}</h2>
+    <h2 class="text-primary">{{today | date:'dd-MMM-yyyy hh:mm:ss'}}</h2> -->
+
+    <!-- <hr/>
+
+    <h2 class="text-danger">{{flag}}</h2>
+    <h2 class="text-danger">{{today | date:format}}</h2> -->
+    <!-- <button class="btn btn-info" (click)="toggleFlag();">{{!flag}}</button> -->
+    <!-- <button class="btn btn-secondary" (click)="toggleFlag();">{{flag ? 'Show Short Date!' : 'Show Full Date!'}}</button> -->
+
+    <!-- using custom pipe 'caption' -->
+    <!-- <button class="btn btn-secondary" (click)="toggleFlag();">{{flag | caption}}</button>
+
+    <hr/>
+
+    <h2 class="text-primary">{{person}}</h2>
+    <h2 class="text-primary">{{person | json}}</h2> -->
+
+    <hr/>
+    <div style="text-align: left;">
+        <label for="byname" style="margin-left: 20px;">Search Name, which starts with</label>
+        <input id="byname" type="text" class="form-control"
+        style="width: 400px; height: auto; background-color: palegreen; margin: 10px auto; margin-left: 20px;"
+        [(ngModel)]="by" />
+    </div>
+    <ul class="list-group" *ngIf="employees">
+        <li class="list-group-item text-warning bg-black"
+        style="margin-left: 20px; margin-right: 20px;"
+        *ngFor="let emp of employees | justfilter:by">
+            {{emp}}
+        </li>
+    </ul>
+</div>

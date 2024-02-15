@@ -1,0 +1,37 @@
+<div class="container">
+    <app-welcome style="float: right;"></app-welcome>
+    <br />
+    <!-- Enter Search <input type="text" (blur)="doSearch($event);" /> -->
+    
+    <!-- Template Reference Variable # -->
+    Enter Search <input type="text" #search (blur)="doSearch(search.value);" />
+    <h1>Products List!</h1>
+    <div style="width: 800px;">
+        <table border="3px solid black" align="center">
+            <tr>
+                <!-- <th>Id</th> -->
+                <th>Name</th>
+                <th>Price</th>
+                <th>Product Image</th>
+                <th>Category</th>
+                <th>Actions</th>
+            </tr>
+            <tr *ngFor="let product of products">
+                <!-- <td>{{product.id}}</td>
+                <td>{{product.name}}</td> -->
+                <td><a [routerLink]="[product.id]">{{product.name}}</a></td>
+                <td>Rs. {{product.price}}/-</td>
+                <td><img [src]="product.imgPath" [alt]="product.name" /></td>
+                <td>{{product.category}}</td>
+                <td>
+                    <button [disabled]="!isAdmin" class="btn btn-info">Edit</button>
+                    <button *ngIf="isAdmin" class="btn btn-warning" (click)="showDetails(product);">Details</button>
+                    <app-addtocart [selectedProduct]="product"></app-addtocart>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="float: right; margin-top: 30px;">
+        <router-outlet></router-outlet>
+    </div>
+</div>

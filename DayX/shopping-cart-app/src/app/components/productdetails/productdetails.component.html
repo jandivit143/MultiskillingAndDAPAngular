@@ -1,0 +1,12 @@
+<div>
+    <h3>Product Details!</h3>
+    <div *ngFor="let product of products">
+        <div *ngIf="product.id === productId">
+            Id: <span>{{product.id}}</span>
+            Name: <span>{{product.name}}</span>
+            Price: <span>Rs. {{product.price}}/-</span>
+            Category: <span>{{product.category}}</span>
+            <img [src]="product.imgPath" alt="product" class="img-fluid" />
+        </div>
+    </div>
+</div>
